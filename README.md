@@ -27,11 +27,11 @@ is_balanced_rec(s,idx,open)
 1. s is the entire string
 2. idx is the current index
 3. open is the count of open parenthesis at this point.
-So for the string "((()()))" wwhen you are at the 5th character:
+So for the string "((()()))" when you are at the 5th character:
 ```
-is_balanced_rec("((()()))",5,4)
+   is_balanced_rec("((()()))",5,4)
 ```
-since we have 4 open "(" for s[0:4], and s[5] is ")", so 4 will be decemented by one.
+we have 4 open "(" for s[0:4], and s[5] is ")", so the 4 will be decemented in the recursive call.
 So what you will do is is_balanced_rec(s,idx,open) will call is_balanced_rec(s,idx+1,n), where n is open - 1 or open + 1 (if s[idx] is a parenthesis, or open is it is not.
 
 
