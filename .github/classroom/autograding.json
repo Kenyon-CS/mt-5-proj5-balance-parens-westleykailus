@@ -1,0 +1,7 @@
+{
+  "tests": [
+    { "name": "Builds", "run": "make", "input": "", "output": "", "comparison": "exact", "timeout": 60, "points": 2 },
+    { "name": "Unit tests pass", "run": "bin/tests", "input": "", "output": "ALL TESTS PASSED", "comparison": "included", "timeout": 60, "points": 8 }
+  ],
+  "version": 0
+}
