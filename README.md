@@ -23,16 +23,17 @@ Makefile
 
 ## Your task
 Complete the helper and keep the wrapper `is_balanced(s)`:
-```cpp
-static bool is_balanced_rec(const std::string& s, int idx, int open) {
-  if (open < 0) return false;                      // closed too many
-  if (idx == (int)s.size()) return open == 0;      // end of string
-  char c = s[idx];
-  if (c == '(') return is_balanced_rec(s, idx+1, open+1);
-  if (c == ')') return is_balanced_rec(s, idx+1, open-1);
-  return is_balanced_rec(s, idx+1, open);          // ignore other chars
-}
+is_balanced_rec(s,idx,open)
+1. s is the entire string
+2. idx is the current index
+3. open is the count of open parenthesis at this point.
+So for the string "((()()))" wwhen you are at the 5th character:
 ```
+is_balanced_rec("((()()))",5,4)
+```
+since we have 4 open "(" for s[0:4], and s[5] is ")", so 4 will be decemented by one.
+So what you will do is is_balanced_rec(s,idx,open) will call is_balanced_rec(s,idx+1,n), where n is open - 1 or open + 1 (if s[idx] is a parenthesis, or open is it is not.
+
 
 #Sample expectations:
 - `""` → balanced
